@@ -1,0 +1,47 @@
+plan your gem, imagine your interface
+Start with the project structure - google
+Start with the entry point- the file run
+force that to build the CLI interface
+stub out the interface
+start making things real
+discover objects
+program
+
+
+
+
+A command line interface for zodiac signs https://www.izodiacsigns.com/ 
+"http://zodiac-signs-astrology.com/"
+
+welcome user, prompt to either select a list, or tell to exit
+
+If they select list, print the list of zodiac signs
+
+show a list of signs
+
+be able to choose sign and then get description of each sign
+
+
+ def self.get_data
+        # scrape zodiac website and return results from website
+        self.scrape_signs
+    end
+
+    def self.scrape_signs
+        signs = []
+        
+        signs << self.scrape_astrology
+
+        signs
+   end
+    def self.scrape_astrology
+    doc = Nokogiri::HTML(open("http://zodiac-signs-astrology.com/"))
+    
+    name = 
+    sign =
+    data =
+   end
+end
+
+end
+
