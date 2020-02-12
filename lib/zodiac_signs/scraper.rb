@@ -1,6 +1,7 @@
+require_relative "../zodiac_signs.rb"
 class ZodiacSigns::Scraper
 
-    def get_page
+    def self.get_page
         url ="http://zodiac-signs-astrology.com/"
         doc = Nokogiri::HTML(url)
         binding.pry
@@ -10,4 +11,7 @@ class ZodiacSigns::Scraper
         
     end
 
+
+
 end
+ZodiacSigns::Scraper.get_page

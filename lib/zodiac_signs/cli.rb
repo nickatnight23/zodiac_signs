@@ -15,7 +15,7 @@ class ZodiacSigns::CLI
         zodiac_list
         menu
       elsif input == "exit"
-         goodbye
+        puts "goodbye"
       else
         invalid_entry
       end
