@@ -1,5 +1,5 @@
 class ZodiacSigns::Sign
-    attr_accessor :name
+    attr_accessor :name, :url, :info
 
     @@ll = []
 
