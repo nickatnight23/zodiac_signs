@@ -4,6 +4,7 @@ class ZodiacSigns::CLI
        puts "Hi user"
        puts "To see Zodiac list, enter 'zodiac'"
        puts "To exit, enter 'exit'"
+       ZodiacSigns::Scraper.new
        menu
     end
 
@@ -26,9 +27,7 @@ class ZodiacSigns::CLI
         ZodiacSigns::Sign.all.each_with_index do |sign, index|
           puts "#{index + 1}. #{sign.name}"
           Puts "capriorn"
-        puts ""
-        puts""
-        puts "pick your horoscope"
+
         input = gets.strip.downcase
 
         zodiac_selection(input)
@@ -36,7 +35,10 @@ class ZodiacSigns::CLI
 
       def zodiac_selection(zodiacsign)
         sign = zodiacsign.find_by_name(zodiac)
-        sign.each do |s|
+        sign.each do |z|
+          puts "sign: #{z.name}"
+          puts "url: #{z.url}"
+          puts "info: #{z.info}"
       end
 
 
