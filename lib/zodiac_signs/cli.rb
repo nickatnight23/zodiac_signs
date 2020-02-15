@@ -21,7 +21,7 @@ class ZodiacSigns::CLI
       puts "enter the number for the sign you want more info on"
      input = gets.strip.downcase
 
-     if input.to_> 0
+     if input.to_i> 0
       puts @signs [input.to_i-1]
      elsif input == "list"
       list_signs
