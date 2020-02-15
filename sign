@@ -1,0 +1,17 @@
+
+[1mFrom:[0m /home/tricia/zodiac_signs/lib/zodiac_signs/scraper.rb @ line 17 ZodiacSigns::Scraper.scraped_page:
+
+    [1;34m10[0m:     [32mdef[0m [1;36mself[0m.[1;34mscraped_page[0m
+    [1;34m11[0m: 
+    [1;34m12[0m:         doc = [1;34;4mNokogiri[0m::HTML(open([31m[1;31m"[0m[31mhttps://www.astrology.com/horoscope/daily.html[1;31m"[0m[31m[0m))
+    [1;34m13[0m:          horoscope = [1;36mself[0m.new
+    [1;34m14[0m:         container = doc.css([31m[1;31m'[0m[31mdiv.item[1;31m'[0m[31m[0m)
+    [1;34m15[0m:          container.each [32mdo[0m |c|
+    [1;34m16[0m:         sign = c.css([31m[1;31m"[0m[31mh2[1;31m"[0m[31m[0m).text
+ => [1;34m17[0m:         binding.pry
+    [1;34m18[0m:         info = c.css([31m[1;31m"[0m[31mp[1;31m"[0m[31m[0m).text
+    [1;34m19[0m:         url = c.css([31m[1;31m"[0m[31ma.more[1;31m"[0m[31m[0m).first.attributes[[31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m].value
+    [1;34m20[0m:         new_sign = [1;34;4mZodiacSigns[0m::[1;34;4mSign[0m.new(sign, info,url)
+    [1;34m21[0m:      [32mend[0m  
+    [1;34m22[0m: [32mend[0m
+

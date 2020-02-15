@@ -1,14 +1,16 @@
 class ZodiacSigns::Sign
-    attr_accessor :name, :url, :info
+    attr_accessor :sign, :url, :info
 
-    @@ll = []
+    @@all = []
 
 
-    def initialize (attr_hash)
-        attr_hash.each do |k,v|
-            self.send(("#{k}="), v) if self.respond_to?("#{k}=")
-        # self.send(("#{key}="), value)
-     end
+
+
+    def initialize (sign, info, url)
+        @sign = sign
+        @url = url
+        @info = info
+
         save
     end
     
@@ -17,7 +19,7 @@ class ZodiacSigns::Sign
     end
 
     def self.all
-        @@all = []
+        @@all 
     end
 
     def self.find_by_name(name)

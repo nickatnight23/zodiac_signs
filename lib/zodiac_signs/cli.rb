@@ -1,56 +1,38 @@
 class ZodiacSigns::CLI
 
     def call
-       puts "Hi user"
-       puts "To see Zodiac list, enter 'zodiac'"
-       puts "To exit, enter 'exit'"
-       ZodiacSigns::Scraper.new
+       list_signs
        menu
+       goodbye
     end
 
 
+    def list_signs
+      puts "welcome to zodiac signs:"
+       ZodiacSigns::Scraper.today
+       signs = ZodiacSigns::Sign.all
+      signs.each.with_index(1) do |sign, i|
+        puts "#{i}. #{sign.sign} - #{sign.info} - #{sign.url}"
+    end
+   
     def menu
-      input = gets.strip.downcase
+      input = nil
+      while input != "exit"
+      puts "enter the number for the sign you want more info on"
+     input = gets.strip.downcase
 
-      if input == "zodiac"
-        zodiac_list
-        menu
-      elsif input == "exit"
-        puts "goodbye"
-      else
-        invalid_entry
-      end
+     if input.to_> 0
+      puts @signs [input.to_i-1]
+     elsif input == "list"
+      list_signs
+     else
+      puts "not sure what you want, type list or exit"
+     end
     end
   end
 
-      def zodiac_list
-        ZodiacSigns::Sign.all.each_with_index do |sign, index|
-          puts "#{index + 1}. #{sign.name}"
-          Puts "capriorn"
-
-        input = gets.strip.downcase
-
-        zodiac_selection(input)
-      end
-
-      def zodiac_selection(zodiacsign)
-        sign = zodiacsign.find_by_name(zodiac)
-        sign.each do |z|
-          puts "sign: #{z.name}"
-          puts "url: #{z.url}"
-          puts "info: #{z.info}"
-      end
-
-
-      def goodbye
-       puts "goodbye, have a good day"
-     end
-
-    def invalid_entry
-       puts "invalid entry, try again"
-       menu
-   end
- end
+    def goodbye
+      puts "check out signs again tomorrow"
+    end
+  end
 end
-
-   
