@@ -22,11 +22,16 @@ class ZodiacSigns::Sign
         @@all 
     end
 
-    def self.find_by_name(name)
-        self.all.select do |sign|
-            sign.name == name
-        end
-    end
+    def self.find(input)
+        self.all[input.to_i - 1]
+     end
+    
+
+    # def self.find_by_name(input)
+    #     self.all.select do |sign|
+    #         sign.sign == sign
+    #     end
+    # end
 
 end 
 
