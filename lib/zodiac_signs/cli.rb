@@ -22,9 +22,11 @@ class ZodiacSigns::CLI
    
     def menu
       input = nil
-      while input != "exit"
+      loop do
         puts "enter the number for the sign you want more info on"
         input = gets.strip.downcase
+        break if input == "exit"
+
 
         if input.to_i> 0 && input.to_i <= ZodiacSigns::Sign.all.length
          show_sign(input)
@@ -41,7 +43,6 @@ class ZodiacSigns::CLI
       d = ZodiacSigns::Sign.find(input)
       puts "\n  SIGN:\n#{d.sign}\n\n  INFO:\n#{d.info}\n\n  WEBSITE:#{d.url}"
       puts "\n  To see more signs?\n  Enter a digit, please.\n  Or 'list' to see them all again.\n  Or 'exit' to leave.\n\n"
-      menu
     end
 
   #   def re_list
