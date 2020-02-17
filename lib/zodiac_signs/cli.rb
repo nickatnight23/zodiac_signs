@@ -45,13 +45,6 @@ class ZodiacSigns::CLI
       puts "\n  To see more signs?\n  Enter a digit, please.\n  Or 'list' to see them all again.\n  Or 'exit' to leave.\n\n"
     end
 
-  #   def re_list
-  #     @@list.each.with_index(1) do |sign, i|
-  #       puts "#{i}, #{sign.sign}"
-  #       menu
-  #   end
-  # end
-  
     def goodbye
       puts "check out signs again tomorrow"
     end
