@@ -42,7 +42,7 @@ class ZodiacSigns::CLI
     def show_sign(input)
       d = ZodiacSigns::Sign.find(input)
       puts "\n  SIGN:\n#{d.sign}\n\n  INFO:\n#{d.info}\n\n  WEBSITE:#{d.url}"
-      puts "\n  To see more signs?\n  Enter a digit, please.\n  Or 'list' to see them all again.\n  Or 'exit' to leave.\n\n"
+      puts "\n  To see more signs?\n  Enter a digit, please.\n  Or 'list' to see them all again.\n  Or 'Exit' to leave.\n\n"
     end
 
     def goodbye
