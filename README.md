@@ -29,8 +29,8 @@ Steps to get the Zodiac Application Started:
 2. Type in cd for the directory and type in zodiac_signs to get you in the correct folder
 3. Then type ./bin/zodiac-signs to enter into the application
 4. Once in the application you will see a list with all of the signs and the daily horoscope for each sign
-5. To select the sign that you want just chose the number of the sign that you want 
-6. Once you have chose the sign that you want the information for that sign will appear and the url link to read more about your horoscope.
+5. To select the sign that you want just choose the number of the sign that you want 
+6. Once you have choose the sign that you want the information for that sign will appear and the url link to read more about your horoscope.
 7. To access the list again just type in "list" and to exit the application type "exit".
 
 
